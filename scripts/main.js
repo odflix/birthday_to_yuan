@@ -9,7 +9,7 @@
   const CANVASHEIGHT = 150
   const CANVASID = 'canvas'
 
-  let texts = ['MY DEAR BEAR', '郭世豪','LOOK UP AT THE', 'STARRY SKY', 'ARE YOU', 'LOOKING AT THE', 'SAME STAR', 'WITH ME ?', 'HAPPY','VALENTINE\'S', 'DAY', 'I MISS YOU','我感觉我的运气不会太差','刚好在下一秒就碰见你啦']
+  let texts = ['MY DEAR BEAR', 'ALISHA','LOOK UP AT THE', 'STARRY SKY', 'ARE YOU', 'LOOKING AT THE', 'SAME STAR', 'WITH ME ?', 'HAPPY','BIRTHDAY', 'DAY', 'I MISS YOU','HAVE A GREAT DAY.','ENJOY THE DAY']
 
   let canvas,
     ctx,
@@ -41,7 +41,7 @@
   }
 
   function particleText (imgData) {
-    // 点坐标获取
+    // Get point coordinates
     var pxls = []
     for (var w = CANVASWIDTH; w > 0; w -= 3) {
       for (var h = 0; h < CANVASHEIGHT; h += 3) {
@@ -157,23 +157,23 @@
     constructor (canvas) {
       let spread = canvas.height
       let size = Math.random() * 1.2
-      // 速度
+      // speed
       this.delta = 0.06
-      // 现在的位置
+      // current location
       this.x = 0
       this.y = 0
-      // 上次的位置
+      // last location
       this.px = Math.random() * canvas.width
       this.py = (canvas.height * 0.5) + ((Math.random() - 0.5) * spread)
-      // 记录点最初的位置
+      // Record the initial position of the point
       this.mx = this.px
       this.my = this.py
-      // 点的大小
+      // dot size
       this.size = size
       // this.origSize = size
-      // 是否用来显示字
+      // Whether to display words
       this.inText = false
-      // 透明度相关
+      // Transparency related
       this.opacity = 0
       this.fadeInRate = 0.005
       this.fadeOutRate = 0.03
